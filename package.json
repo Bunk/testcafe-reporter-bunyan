@@ -1,0 +1,47 @@
+{
+  "name": "testcafe-reporter-bunyan",
+  "version": "1.0.0",
+  "description": "bunyan TestCafe reporter plugin.",
+  "repository": "https://github.com/Bunk/testcafe-reporter-bunyan",
+  "author": {
+    "name": "JD Courtoy",
+    "url": "https://github.com/bunk"
+  },
+  "main": "lib/index",
+  "files": [
+    "lib"
+  ],
+  "standard": {
+    "globals": [
+      "it",
+      "describe"
+    ]
+  },
+  "scripts": {
+    "test": "gulp test",
+    "publish-please": "publish-please",
+    "prepublish": "publish-please guard"
+  },
+  "keywords": [
+    "testcafe",
+    "reporter",
+    "plugin"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "callsite-record": "^3.2.0",
+    "del": "^1.2.0",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^5.2.1",
+    "gulp-mocha": "^2.2.0",
+    "gulp-standard": "10.1.1",
+    "normalize-newline": "^1.0.2",
+    "publish-please": "^2.1.4",
+    "read-file-relative": "^1.2.0",
+    "standard": "10.0.3",
+    "testcafe": "^0.2.0-alpha"
+  },
+  "dependencies": {
+    "bunyan": "1.8.12"
+  }
+}
