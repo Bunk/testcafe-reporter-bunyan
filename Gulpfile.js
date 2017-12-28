@@ -2,11 +2,35 @@ var gulp = require('gulp')
 var standard = require('gulp-standard')
 var babel = require('gulp-babel')
 var mocha = require('gulp-mocha')
+var bump = require('gulp-bump')
+var git = require('gulp-git')
+var tagVersion = require('gulp-tag-version')
+var filter = require('gulp-filter')
 var del = require('del')
 
 gulp.task('clean', function (cb) {
   del('lib', cb)
 })
+
+function inc (importance) {
+  // get all the files to bump version in
+  return gulp.src(['./package.json', './bower.json'])
+      // bump the version number in those files
+      .pipe(bump({type: importance}))
+      // save it back to filesystem
+      .pipe(gulp.dest('./'))
+      // commit the changed version number
+      .pipe(git.commit('bumps package version'))
+
+      // read only one file to get the version number
+      .pipe(filter('package.json'))
+      // **tag it in the repository**
+      .pipe(tagVersion())
+}
+
+gulp.task('patch', function () { return inc('patch') })
+gulp.task('feature', function () { return inc('minor') })
+gulp.task('release', function () { return inc('major') })
 
 gulp.task('lint', function () {
   return gulp
