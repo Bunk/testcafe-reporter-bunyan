@@ -1,6 +1,6 @@
 {
   "name": "testcafe-reporter-bunyan",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "bunyan TestCafe reporter plugin.",
   "repository": "https://github.com/Bunk/testcafe-reporter-bunyan",
   "author": {
@@ -33,8 +33,12 @@
     "del": "^1.2.0",
     "gulp": "^3.9.0",
     "gulp-babel": "^5.2.1",
+    "gulp-bump": "3.0.0",
+    "gulp-filter": "5.0.1",
+    "gulp-git": "2.5.0",
     "gulp-mocha": "^2.2.0",
     "gulp-standard": "10.1.1",
+    "gulp-tag-version": "1.3.1",
     "normalize-newline": "^1.0.2",
     "publish-please": "^2.1.4",
     "read-file-relative": "^1.2.0",
